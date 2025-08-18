@@ -1,10 +1,11 @@
 import React from "react";
-import TODO from "./TODO";
+// import TODO from "./TODO";
+import RPart2 from "./RPart2";
 
 export default function App() {
   return (
     <div>
-      <TODO />
+      <RPart2 />
     </div>
   );
 }
