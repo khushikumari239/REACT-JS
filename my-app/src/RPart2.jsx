@@ -1,59 +1,65 @@
 
-// 9. Lists and Keys🪻
+// LayOuts : - 
 
-import React from 'react';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Blogs from "./pages/Blogs";
+import Contact from "./pages/Contact";
+import NoPage from "./pages/NoPage";
 
-const ItemList = ({ items }) => {
-    return (
-        <ul>
-            {items.map(item => (
-                <li key={item.id}>{item.name}</li>
-            ))}
-        </ul>
-    );
-};
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
-const App = () => {
-    const items = [
-        { id: 1, name: 'Item 1' },
-        { id: 2, name: 'Item 2' },
-        { id: 3, name: 'Item 3' },
-    ];
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
 
-    return <ItemList items={items} />;
-};
+
+
+
+
+
+
+
+// // 9. Lists and Keys🪻
+
+// import React from 'react';
+
+// const ItemList = ({ items }) => {
+//     return (
+//         <ul>
+//             {items.map(item => (
+//                 <li key={item.id}>{item.name}</li>
+//             ))}
+//         </ul>
+//     );
+// };
+
+// const App = () => {
+//     const items = [
+//         { id: 1, name: 'Item 1' },
+//         { id: 2, name: 'Item 2' },
+//         { id: 3, name: 'Item 3' },
+//     ];
+
+//     return <ItemList items={items} />;
+// };
     
-export default App
+// export default App
                         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
